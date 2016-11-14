@@ -25,7 +25,7 @@ public class PlayMovie : MonoBehaviour {
         ChooseMovie();
         ri.material.SetTexture("_MainTex", Resources.Load("Movies/" + txtr) as Texture);
         movTexture = GetComponent<RawImage>().material.mainTexture as MovieTexture;
-        if (!justStarting) {
+        if (!justStarting && movTexture) {
             movTexture.Play();
             movTexture.loop = true;
         }
