@@ -35,8 +35,8 @@ public class PlayMovie : MonoBehaviour {
             }
         }
 
-        if (buttonPressed.Contains("-")) {
-            int dashIndex = buttonPressed.IndexOf("-");
+        if (buttonPressed.Contains(".")) {
+            int dashIndex = buttonPressed.IndexOf(".");
             if (buttonPressed.Contains("'")) buttonPressed.Replace("'", "");
             txtr = buttonPressed.Substring(dashIndex + 1);
         }

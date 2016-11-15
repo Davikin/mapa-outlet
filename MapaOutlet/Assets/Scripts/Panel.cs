@@ -21,7 +21,7 @@ public class Panel : MonoBehaviour {
         }
     }
 
-    public void TogglePanel(int infoIndex) {
+    public void TogglePanel() {
         panel.SetActive(!panel.activeSelf);
         buttons.SetActive(!panel.activeSelf);
     }

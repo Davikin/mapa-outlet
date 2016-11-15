@@ -60,9 +60,10 @@ public class Buttons : MonoBehaviour {
                     buttonTextRect.offsetMax = new Vector2(0f, 13.6f); ;
                 }
             }
-            if (child.gameObject.name.Contains("-") && !XmlIsEnabled) {
-                int dashIndex = child.gameObject.name.IndexOf("-");
+            if (child.gameObject.name.Contains(".") && !XmlIsEnabled) {
+                int dashIndex = child.gameObject.name.IndexOf(".");
                 storeName = child.gameObject.name.Substring(dashIndex + 1);
+                if(storeName.IndexOf("+") > 0) storeName = storeName.Remove(storeName.IndexOf("+"));
                 if (storeName.Contains(" ") && child.name.Contains("isla")) buttonText.GetComponent<Text>().text = storeName.Replace(" ", "\n");
                 else buttonText.GetComponent<Text>().text = storeName;
             }
