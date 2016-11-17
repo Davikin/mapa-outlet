@@ -11,7 +11,7 @@ public class PlayMovie : MonoBehaviour {
     string txtr = "";
     RawImage ri;
     FileInfo[] fileInfo;
-    string movieDirectory, storeName, localName;
+    string movieDirectory, storeName, localName, phone;
     DirectoryInfo movieDirectoryPath;
     List<string> movieNames = new List<string>();
     bool justStarting = true;
@@ -52,18 +52,37 @@ public class PlayMovie : MonoBehaviour {
             localName = "S/N";
         }
 
+        if (localName.Contains("#")) {
+            localName = localName.Remove(localName.IndexOf("#"));
+        }
+
         if (txtr.Contains("'")) {
             txtr = txtr.Replace("'","");
         }
 
+        if (txtr.Contains("#")) {
+            phone = txtr.Substring(txtr.IndexOf("#") + 1);
+            phone = phone.Insert(3,".");
+            phone = phone.Insert(6, ".");
+            phone = "Tel. " + phone;
+            print(phone);
+            txtr = txtr.Remove(txtr.IndexOf("#"));
+        }
+        else {
+            phone = "Tel\u00e9fono no disponible";
+        }
+
+        txtr = storeName;
         mpc.m_strFileName = txtr+".mp4";
         mpc.Load(mpc.m_strFileName);
         mpc.Play();
 
         foreach(Transform sibling in transform.parent) {
-         
             if (sibling.name == "nombre") {
                 sibling.gameObject.GetComponent<Text>().text = storeName;
+            }
+            if (sibling.name == "telefono") {
+                sibling.gameObject.GetComponent<Text>().text = phone;
             }
             if (sibling.name == "local" ) {
                 localText = sibling.gameObject.GetComponent<Text>();

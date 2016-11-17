@@ -25,4 +25,10 @@ public class Panel : MonoBehaviour {
         panel.SetActive(!panel.activeSelf);
         buttons.SetActive(!panel.activeSelf);
     }
+
+    public void PanelOff() {
+        if (!panel.activeSelf) return;
+        panel.SetActive(false);
+        buttons.SetActive(true);
+    }
 }

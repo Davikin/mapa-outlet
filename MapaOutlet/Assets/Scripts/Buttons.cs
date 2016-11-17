@@ -34,6 +34,7 @@ public class Buttons : MonoBehaviour {
                         else {
                             textComponent.resizeTextMaxSize = 27;
                         }
+                        textComponent.horizontalOverflow = HorizontalWrapMode.Overflow;
                     }
                     else if (!child.gameObject.name.Contains("vertical")) {
                         buttonTextRect.eulerAngles = new Vector3(0, 0, 0);
@@ -63,13 +64,12 @@ public class Buttons : MonoBehaviour {
             if (child.gameObject.name.Contains(".") && !XmlIsEnabled) {
                 int dashIndex = child.gameObject.name.IndexOf(".");
                 storeName = child.gameObject.name.Substring(dashIndex + 1);
-                if(storeName.IndexOf("+") > 0) storeName = storeName.Remove(storeName.IndexOf("+"));
-                if (storeName.Contains(" ") && child.name.Contains("isla")) buttonText.GetComponent<Text>().text = storeName.Replace(" ", "\n");
+                if (storeName.Contains(" 01")) storeName = storeName.Replace(" 01","");
+                if (storeName.Contains(" 02")) storeName = storeName.Replace(" 02", "");
+                if (storeName.IndexOf("+") > 0) storeName = storeName.Remove(storeName.IndexOf("+"));
+                if (storeName.ToLower().Contains("hampton") || storeName.ToLower().Contains("plate")) storeName = storeName.Replace(" ","\n");
+                if (storeName.Contains(" ") && (child.name.Contains("isla") || child.name.ToLower().Contains("vertical"))) buttonText.GetComponent<Text>().text = storeName.Replace(" ", "\n");
                 else buttonText.GetComponent<Text>().text = storeName;
-            }
-            if (child.gameObject.name.Contains(" 01") || child.gameObject.name.Contains(" 02")) {
-                child.gameObject.name.Replace(" 01","");
-                child.gameObject.name.Replace(" 02", "");
             }
 
             if (storeName.ToLower().Contains("zwill")){
