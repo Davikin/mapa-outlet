@@ -11,12 +11,13 @@ public class PlayMovie : MonoBehaviour {
     string txtr = "";
     RawImage ri;
     FileInfo[] fileInfo;
-    string movieDirectory;
+    string movieDirectory, storeName, localName;
     DirectoryInfo movieDirectoryPath;
     List<string> movieNames = new List<string>();
     bool justStarting = true;
     MediaPlayerCtrl mpc;
     public Texture black;
+    Text logoText, localText;
 
     // Use this for initialization
     void Awake() {
@@ -41,9 +42,38 @@ public class PlayMovie : MonoBehaviour {
             txtr = buttonPressed.Substring(dashIndex + 1);
         }
 
+        storeName = txtr;
+
+        if (txtr.Contains("+")) {
+           localName = "LOCAL "+storeName.Substring(txtr.IndexOf("+")+1);
+           storeName = txtr.Remove(txtr.IndexOf("+"));
+        }
+        else {
+            localName = "S/N";
+        }
+
+        if (txtr.Contains("'")) {
+            txtr = txtr.Replace("'","");
+        }
+
         mpc.m_strFileName = txtr+".mp4";
         mpc.Load(mpc.m_strFileName);
         mpc.Play();
+
+        foreach(Transform sibling in transform.parent) {
+         
+            if (sibling.name == "nombre") {
+                sibling.gameObject.GetComponent<Text>().text = storeName;
+            }
+            if (sibling.name == "local" ) {
+                localText = sibling.gameObject.GetComponent<Text>();
+                localText.text = localName;
+                break;
+            }
+        }
+
+        logoText = GameObject.FindGameObjectWithTag("logo").GetComponent<Text>();
+        logoText.text = storeName;
     }
 
     void Start() {
@@ -53,10 +83,6 @@ public class PlayMovie : MonoBehaviour {
         fileInfo = movieDirectoryPath.GetFiles("*.mp4", SearchOption.AllDirectories);
 
         foreach (FileInfo file in fileInfo) {movieNames.Add(file.Name);}
-
-/*        foreach (string name in movieNames) {
-            print(name);
-        }*/
     }
 
     void OnDisable() {

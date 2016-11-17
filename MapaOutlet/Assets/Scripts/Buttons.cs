@@ -67,6 +67,11 @@ public class Buttons : MonoBehaviour {
                 if (storeName.Contains(" ") && child.name.Contains("isla")) buttonText.GetComponent<Text>().text = storeName.Replace(" ", "\n");
                 else buttonText.GetComponent<Text>().text = storeName;
             }
+            if (child.gameObject.name.Contains(" 01") || child.gameObject.name.Contains(" 02")) {
+                child.gameObject.name.Replace(" 01","");
+                child.gameObject.name.Replace(" 02", "");
+            }
+
             if (storeName.ToLower().Contains("zwill")){
                 buttonText.GetComponent<Text>().fontSize = 5;
             }
