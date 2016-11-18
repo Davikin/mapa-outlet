@@ -31,21 +31,16 @@ public class Agent : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
 
-        if (Input.GetMouseButtonDown(0))
-        {
+        if (Input.GetMouseButtonDown(0)) {
             MoveAgent();
         }
-        if (agent.hasPath)
-        {
-            for (int i = 0; i < agent.path.corners.Length - 1; i++)
-            {
+        if (agent.hasPath) {
+            for (int i = 0; i < agent.path.corners.Length - 1; i++) {
                 Debug.DrawLine(agent.path.corners[i], agent.path.corners[i + 1], Color.red);
                 spawnCounter += Time.deltaTime;
-                if (spawnCounter >= spawnTime)
-                {
+                if (spawnCounter >= spawnTime) {
                     // Buscamos un indicador del pool disponible
                     GameObject indicator = GetIndicator();
                     indicator.transform.position = agent.transform.position;
@@ -56,40 +51,33 @@ public class Agent : MonoBehaviour {
             }
         }
     }
- 
-    private void MoveAgent()
-    {
+
+    private void MoveAgent() {
         Ray ray = camera3D.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit) && !Panel.Instance.panel.activeSelf)
-        {
+        if (Physics.Raycast(ray, out hit) && !Panel.Instance.panel.activeSelf) {
             //activatedIndicators.Clear();
             agent.transform.localPosition = initialPosition;
             agent.destination = hit.point;
-           
+
 
             // Apagamos todos los indicadores en uso
-            foreach (GameObject obj in pathIndicatorsPool)
-            {
-                if (obj.activeSelf)
-                {
+            foreach (GameObject obj in pathIndicatorsPool) {
+                if (obj.activeSelf) {
                     obj.SetActive(false);
                     obj.transform.position = initialPosition;
                 }
             }
-            
 
-            
+
+
         }
-         else print("No se puede mover el agent porque el panel esta activo");
+        else print("No se puede mover el agent porque el panel esta activo");
     }
 
-    private GameObject GetIndicator()
-    {
-        foreach (GameObject obj in pathIndicatorsPool)
-        {
-            if (!obj.activeSelf)
-            {
+    private GameObject GetIndicator() {
+        foreach (GameObject obj in pathIndicatorsPool) {
+            if (!obj.activeSelf) {
                 return obj;
             }
         }
