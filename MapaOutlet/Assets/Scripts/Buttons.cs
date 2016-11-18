@@ -68,7 +68,17 @@ public class Buttons : MonoBehaviour {
                 if (storeName.Contains(" 02")) storeName = storeName.Replace(" 02", "");
                 if (storeName.IndexOf("+") > 0) storeName = storeName.Remove(storeName.IndexOf("+"));
                 if (storeName.ToLower().Contains("hampton") || storeName.ToLower().Contains("plate")) storeName = storeName.Replace(" ","\n");
-                if (storeName.Contains(" ") && (child.name.Contains("isla") || child.name.ToLower().Contains("vertical"))) buttonText.GetComponent<Text>().text = storeName.Replace(" ", "\n");
+                if (storeName.Contains(" ") && (child.name.Contains("isla") || child.name.ToLower().Contains("vertical"))) {
+                    buttonText.GetComponent<Text>().text = storeName.Replace(" ", "\n");
+                    if (storeName.ToUpper().Contains("CUEVA DEL ZORRO")) {
+                        storeName = "LA CUEVA\nDEL ZORRO";
+                        buttonText.GetComponent<Text>().text = storeName;
+                    }
+                    if (storeName.ToUpper().Contains("FONDA STA CLARA")) {
+                        storeName = "LA FONDA\nSTA CLARA";
+                        buttonText.GetComponent<Text>().text = storeName;
+                    }
+                }
                 else buttonText.GetComponent<Text>().text = storeName;
             }
 
