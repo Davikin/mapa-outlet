@@ -5,7 +5,8 @@ public class Panel : MonoBehaviour {
 
     public static Panel Instance { get; private set; }
     public GameObject panel, buttons;
-
+    Agent agent;
+    Transform indicadores;
     // Use this for initialization
     void Awake() {
         Instance = this;
@@ -19,6 +20,13 @@ public class Panel : MonoBehaviour {
         if (buttons == null && GameObject.FindGameObjectWithTag("buttons") != null) {
             buttons = GameObject.FindGameObjectWithTag("buttons");
         }
+        if (indicadores == null && GameObject.FindGameObjectWithTag("indicadores") != null) {
+            indicadores = GameObject.FindGameObjectWithTag("indicadores").transform;
+        }
+
+        if (agent == null && GameObject.FindGameObjectWithTag("agent") != null) {
+            agent = GameObject.FindGameObjectWithTag("agent").GetComponent<Agent>();
+        }
     }
 
     public void TogglePanel() {
@@ -30,5 +38,14 @@ public class Panel : MonoBehaviour {
         if (!panel.activeSelf) return;
         panel.SetActive(false);
         buttons.SetActive(true);
+    }
+    public void ToggleIndicators(bool onOrOff) {
+        //foreach (Transform indicador in indicadores) indicador.GetComponent<SpriteRenderer>().enabled = onOrOff;
+        foreach (GameObject indicador in agent.activatedIndicators) indicador.GetComponent<MeshRenderer>().enabled = onOrOff;
+        if (!onOrOff) {
+            foreach (GameObject indicador in agent.activatedIndicators) indicador.name = indicador.name.Replace("added",""); 
+            agent.activatedIndicators.Clear();
+        }
+        agent.activatingMeshes = onOrOff;
     }
 }

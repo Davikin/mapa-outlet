@@ -12,6 +12,9 @@ public class Agent : MonoBehaviour {
     private float spawnTime = 1f;
     private float spawnCounter = 0;
     private List<GameObject> pathIndicatorsPool = new List<GameObject>();
+    private Vector3 initialPosition;
+    public List<GameObject> activatedIndicators = new List<GameObject>();
+    public bool activatingMeshes = false;
 
     //private List<GameObject> pathIndicators = new List<GameObject>();
 
@@ -23,6 +26,8 @@ public class Agent : MonoBehaviour {
         //Agregamos todos los indicadores a la lista de pool
         foreach (Transform t in pathIndicatorsContainer)
             pathIndicatorsPool.Add(t.gameObject);
+
+        initialPosition = transform.localPosition;
     }
 
     // Update is called once per frame
@@ -56,26 +61,27 @@ public class Agent : MonoBehaviour {
     {
         Ray ray = camera3D.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit) && !Panel.Instance.panel.activeSelf)
         {
-            agent.transform.localPosition = Vector3.zero;
+            //activatedIndicators.Clear();
+            agent.transform.localPosition = initialPosition;
             agent.destination = hit.point;
-            //agent.SetDestination(hit.point);
+           
 
             // Apagamos todos los indicadores en uso
-            foreach(GameObject obj in pathIndicatorsPool)
+            foreach (GameObject obj in pathIndicatorsPool)
             {
                 if (obj.activeSelf)
                 {
                     obj.SetActive(false);
-                    obj.transform.position = Vector3.zero;
+                    obj.transform.position = initialPosition;
                 }
             }
             
 
             
         }
-
+         else print("No se puede mover el agent porque el panel esta activo");
     }
 
     private GameObject GetIndicator()
@@ -94,5 +100,15 @@ public class Agent : MonoBehaviour {
         return dummy;
     }
 
+    void OnTriggerEnter(Collider col) {
+        if (col.tag == "indicadores") {
+            //col.gameObject.GetComponent<MeshRenderer>().enabled = true;
+            if (!col.gameObject.name.Contains("added")) {
+                activatedIndicators.Add(col.gameObject);
+                col.gameObject.name += "added";
+            }
+            if (activatingMeshes) col.gameObject.GetComponent<MeshRenderer>().enabled = true;
+        }
+    }
 
 }
