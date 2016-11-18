@@ -7,6 +7,9 @@ public class Panel : MonoBehaviour {
     public GameObject panel, buttons;
     Agent agent;
     Transform indicadores;
+    public Material grey;
+    public bool filterIsActive = false;
+
     // Use this for initialization
     void Awake() {
         Instance = this;

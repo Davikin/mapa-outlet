@@ -73,6 +73,8 @@ public class PlayMovie : MonoBehaviour {
         }
 
         txtr = storeName;
+        if (txtr.Contains("'")) txtr = txtr.Replace("'","");
+
         mpc.m_strFileName = txtr+".mp4";
         mpc.Load(mpc.m_strFileName);
         mpc.Play();
