@@ -17,11 +17,13 @@ public class XMLLoader : MonoBehaviour {
     bool justStarting = true;
     [SerializeField] Text display;
 
+    TiendaContainer tc;
+
     // Use this for initialization
     void Start() {
         userDirectory = Application.persistentDataPath;
 
-        print("The persistent data path is"+ userDirectory);
+        print("The persistent data path is: "+ userDirectory);
 
         //do nothing until file finishes being deleted
         while (File.Exists(Application.dataPath + "/Resources/tiendasNew.xml")) File.Delete(Application.dataPath + "/Resources/tiendasNew.xml");
@@ -34,7 +36,7 @@ public class XMLLoader : MonoBehaviour {
         }
 
         if (!File.Exists(userDirectory + fileName)) { //create the file as well if it does not exist // NO HAY NECESIDAD DE CHECAR SI YA EXISTE, PORQUE NO HARA EL OVERWRITE CUANDO YA EXISTA... MEJOR DICHO, JAMAS HABRA OVERWRITE
-            File.WriteAllText(userDirectory + fileName, "<!--EN ESTE ARCHIVO USTED PUEDE CAMBIAR LOS NOMBRES DE LAS TIENDAS JUNTO CON SU INFORMACION DE CONTACTO-->\n"+textAsset.text); //using the text copied from the file in Resources folder
+            File.WriteAllText(userDirectory + fileName, textAsset.text); //using the text copied from the file in Resources folder
         }
 
         File.Copy(userDirectory + fileName, Application.dataPath + "/Resources/tiendasNew.xml", true); //overwrite the xml file in Resources with the one in the outer folder
@@ -52,11 +54,21 @@ public class XMLLoader : MonoBehaviour {
         if (Resources.Load("tiendasNew")) {
             print("New input is:\n" + textAsset.text);
             if (display != null) display.text = "New input is:\n" + textAsset.text;
+            //Llamar al TiendaLoader
+            tc = TiendaContainer.Load("tiendasNew");
+            foreach (Tienda tienda in tc.tiendas) {
+                print(tienda.nombre+" se encuentra en el local "+tienda.numLocal+". Su telefono es: "+tienda.phone);
+            }
         }
         else {
             textAsset = Resources.Load("tiendasNew") as TextAsset;
             print("New input is:\n" + textAsset.text);
             if (display != null) display.text = "New input is:\n" + textAsset.text;
+            //Llamar al TiendaLoader
+            tc = TiendaContainer.Load("tiendasNew");
+            foreach (Tienda tienda in tc.tiendas) {
+                print(tienda.nombre);
+            }
         }
     }
 }
