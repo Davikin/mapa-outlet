@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Agent : MonoBehaviour {
 
+    //Variables Luis
     public Camera camera3D;
     public Transform pathIndicatorsContainer;
     public GameObject pathIndicator;
@@ -12,11 +13,11 @@ public class Agent : MonoBehaviour {
     private float spawnTime = 1f;
     private float spawnCounter = 0;
     private List<GameObject> pathIndicatorsPool = new List<GameObject>();
+
+    //Variables David /**/
     private Vector3 initialPosition;
     public List<GameObject> activatedIndicators = new List<GameObject>();
     public bool activatingMeshes = false;
-
-    //private List<GameObject> pathIndicators = new List<GameObject>();
 
     // Use this for initialization
     void Start() {
@@ -27,7 +28,7 @@ public class Agent : MonoBehaviour {
         foreach (Transform t in pathIndicatorsContainer)
             pathIndicatorsPool.Add(t.gameObject);
 
-        initialPosition = transform.localPosition;
+        initialPosition = transform.localPosition; /**/
     }
 
     // Update is called once per frame
@@ -56,7 +57,7 @@ public class Agent : MonoBehaviour {
         Ray ray = camera3D.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit) && !Panel.Instance.panel.activeSelf) {
-            //activatedIndicators.Clear();
+            activatedIndicators.Clear();
             agent.transform.localPosition = initialPosition;
             agent.destination = hit.point;
 
