@@ -6,7 +6,6 @@ public class Buttons : MonoBehaviour {
 
     public string storeName;
     public bool XmlIsEnabled;
-    public XMLLoader loader;
 
     // Use this for initialization
     void Start() {
@@ -81,10 +80,6 @@ public class Buttons : MonoBehaviour {
                     }
                 }
                 else buttonText.GetComponent<Text>().text = storeName;
-            }
-
-            if (XmlIsEnabled) {
-
             }
 
             if (storeName.ToLower().Contains("zwill")){

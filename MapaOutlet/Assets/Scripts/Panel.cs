@@ -5,7 +5,8 @@ public class Panel : MonoBehaviour {
 
     public static Panel Instance { get; private set; }
     public GameObject panel, buttons;
-    Agent agent;
+    public PlayMovie play;
+    public Agent agent;
     Transform indicadores;
     public Material grey;
     public bool filterIsActive = false;
@@ -15,40 +16,39 @@ public class Panel : MonoBehaviour {
         Instance = this;
     }
 
-    void Update() {
-        if (panel == null && GameObject.FindGameObjectWithTag("panel") != null) {
-            panel = GameObject.FindGameObjectWithTag("panel");
-            panel.SetActive(false);
-        }
-        if (buttons == null && GameObject.FindGameObjectWithTag("buttons") != null) {
-            buttons = GameObject.FindGameObjectWithTag("buttons");
-        }
-        if (indicadores == null && GameObject.FindGameObjectWithTag("indicadores") != null) {
-            indicadores = GameObject.FindGameObjectWithTag("indicadores").transform;
-        }
-
-        if (agent == null && GameObject.FindGameObjectWithTag("agent") != null) {
-            agent = GameObject.FindGameObjectWithTag("agent").GetComponent<Agent>();
-        }
+    void Start()
+    {
+        panel.SetActive(false);
     }
 
-    public void TogglePanel() {
+    public void TogglePanel(ButtonDataObject dataObject ) {
         panel.SetActive(!panel.activeSelf);
         buttons.SetActive(!panel.activeSelf);
+
+        if (panel.activeSelf)
+            play.FillData(dataObject);
+            
     }
 
     public void PanelOff() {
-        if (!panel.activeSelf) return;
-        panel.SetActive(false);
-        buttons.SetActive(true);
+        if (panel.activeSelf)
+        {
+            panel.SetActive(false);
+            buttons.SetActive(true);
+        }
     }
     public void ToggleIndicators(bool onOrOff) {
-        //foreach (Transform indicador in indicadores) indicador.GetComponent<SpriteRenderer>().enabled = onOrOff;
-        foreach (GameObject indicador in agent.activatedIndicators) indicador.GetComponent<MeshRenderer>().enabled = onOrOff;
+        foreach (GameObject indicador in agent.activatedIndicators) indicador.GetComponent<SpriteRenderer>().enabled = onOrOff;
         if (!onOrOff) {
-            foreach (GameObject indicador in agent.activatedIndicators) indicador.name = indicador.name.Replace("added",""); 
-            agent.activatedIndicators.Clear();
+            foreach (GameObject indicador in agent.activatedIndicators)
+                indicador.name = indicador.name.Replace("added", "");
+           agent.activatedIndicators.Clear();
         }
         agent.activatingMeshes = onOrOff;
+    }
+
+    IEnumerator WaitForToggle() {
+
+        yield return new WaitForEndOfFrame();
     }
 }
