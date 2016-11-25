@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class LocalFilter : MonoBehaviour {
-    public Sprite targetSprite;
+    public Sprite targetSprite, greySprite;
     Transform buttons;
     float filteredOutText = 0.4f;
 
@@ -18,7 +18,7 @@ public class LocalFilter : MonoBehaviour {
             if (b.name.ToLower().Contains("button")) {
                 if (onOrOff) {
                     if (b.GetComponent<Image>().sprite != targetSprite) {
-                        b.GetComponent<Image>().material = Panel.Instance.grey;
+                        b.GetComponent<Image>().sprite = greySprite;
                         //b.GetChild(0).GetComponent<Text>().color = new Color(filteredOutText, filteredOutText, filteredOutText);
                     }
                     Panel.Instance.filterIsActive = true;
@@ -33,7 +33,7 @@ public class LocalFilter : MonoBehaviour {
     public void UnfilterLocals() {
         foreach (Transform b in buttons) {
             if (b.name.ToLower().Contains("button")) {
-                b.GetComponent<Image>().material = null;
+                b.GetComponent<Image>().sprite = targetSprite;
                 b.GetChild(0).GetComponent<Text>().color = Color.white;
             }
         }
