@@ -27,6 +27,7 @@ public class MultiButtonData {
                 else {
                     phone = phone.Insert(3, ".").Insert(7, ".");
                 }
+                phone = "Tel. " + phone;
             }
             else {
                 phone = "Tel\u00e9fono no disponible";
@@ -34,7 +35,7 @@ public class MultiButtonData {
 
             if (child.name.Contains("#")) {
                 local = child.name.Substring(child.name.IndexOf("+") + 1);
-                local = local.Remove(local.IndexOf("#"));
+                local = "LOCAL "+local.Remove(local.IndexOf("#"));
             }
             else {
                 local = "N/A";

@@ -133,8 +133,6 @@ public class PlayMovie : MonoBehaviour {
     }
 
     void OnDisable() {
-        //if(mpc.)
-        //if (movTexture) movTexture.Stop();
         mpc.Stop();
         mpc.UnLoad();
         ri.texture = black;
@@ -150,6 +148,8 @@ public class PlayMovie : MonoBehaviour {
         nombreVideo = nombreVideo + ".mp4";
         logoText.text = storeName;
         storeNameText.text = storeName;
+        numeroText.text = _dataObj.numero;
+        localText.text = _dataObj.local;
         // Corre video
         //mpc.m_strFileName = nombreVideo;
 
