@@ -7,8 +7,6 @@ public class Panel : MonoBehaviour {
     public GameObject panel, buttons;
     public PlayMovie play;
     public Agent agent;
-    Transform indicadores;
-    public Material grey;
     public bool filterIsActive = false;
 
     // Use this for initialization
@@ -19,6 +17,7 @@ public class Panel : MonoBehaviour {
     void Start()
     {
         panel.SetActive(false);
+        if(!Debug.isDebugBuild)Cursor.visible = false;
     }
 
     public void TogglePanel(ButtonDataObject dataObject ) {
@@ -31,8 +30,8 @@ public class Panel : MonoBehaviour {
     }
 
     public void PanelOff() {
-        if (panel.activeSelf)
-        {
+        if (panel.activeSelf){
+            print("Button is working!");
             panel.SetActive(false);
             buttons.SetActive(true);
         }

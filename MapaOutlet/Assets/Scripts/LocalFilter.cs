@@ -4,9 +4,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class LocalFilter : MonoBehaviour {
-    public Sprite targetSprite, greySprite;
+    public string targetColor;
+    public SpriteContainer sc;
     Transform buttons;
-    float filteredOutText = 0.4f;
 
     void Update() {
         if (buttons == null && GameObject.FindGameObjectWithTag("buttons") != null) buttons = GameObject.FindGameObjectWithTag("buttons").transform;
@@ -17,10 +17,11 @@ public class LocalFilter : MonoBehaviour {
         foreach (Transform b in buttons) {
             if (b.name.ToLower().Contains("button")) {
                 if (onOrOff) {
-                    if (b.GetComponent<Image>().sprite != targetSprite) {
-                        b.GetComponent<Image>().sprite = greySprite;
-                        //b.GetChild(0).GetComponent<Text>().color = new Color(filteredOutText, filteredOutText, filteredOutText);
-                    }
+                    if (!b.GetComponent<Image>().sprite.name.ToLower().Contains(targetColor))
+                        for (int i = 0; i <= sc.targetSprites.Length - 1; i++) {
+                            if (b.GetComponent<Image>().sprite == sc.targetSprites[i])
+                                b.GetComponent<Image>().sprite = sc.greySprites[i];
+                        }
                     Panel.Instance.filterIsActive = true;
                 }
                 else {
@@ -33,8 +34,10 @@ public class LocalFilter : MonoBehaviour {
     public void UnfilterLocals() {
         foreach (Transform b in buttons) {
             if (b.name.ToLower().Contains("button")) {
-                b.GetComponent<Image>().sprite = targetSprite;
-                b.GetChild(0).GetComponent<Text>().color = Color.white;
+                for (int i = 0; i <= sc.targetSprites.Length - 1; i++) {
+                    if (b.GetComponent<Image>().sprite == sc.greySprites[i])
+                        b.GetComponent<Image>().sprite = sc.targetSprites[i];
+                }
             }
         }
         Panel.Instance.filterIsActive = false;
