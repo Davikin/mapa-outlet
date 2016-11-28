@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Panel : MonoBehaviour {
 
@@ -29,8 +30,12 @@ public class Panel : MonoBehaviour {
             return;
         }
 
+        foreach (Transform btn in buttons.transform)
+            if(btn.GetComponent<Button>())
+                btn.GetComponent<Button>().enabled = !panel.activeSelf;
+        //buttons.SetActive(!panel.activeSelf);
+
         panel.SetActive(!panel.activeSelf);
-        buttons.SetActive(!panel.activeSelf);
 
         if (panel.activeSelf) { 
             play.FillData(dataObject);
@@ -47,7 +52,10 @@ public class Panel : MonoBehaviour {
         panelAnim.SetTrigger("panelOut");
         yield return new WaitForSeconds(1f); //suponiendo que el fadeout dure 1s
         panel.SetActive(false);
-        buttons.SetActive(true);
+        //buttons.SetActive(true);
+        foreach (Transform btn in buttons.transform)
+            if (btn.GetComponent<Button>())
+                btn.GetComponent<Button>().enabled = true;
     }
 
     IEnumerator WaitForToggle() {
@@ -64,5 +72,13 @@ public class Panel : MonoBehaviour {
            agent.activatedIndicators.Clear();
         }
         agent.activatingMeshes = onOrOff;
+    }
+
+    public void ButtonsOff() {
+        if (buttons.activeSelf) buttons.SetActive(false);
+    }
+
+    public void ButtonsOn() {
+        if (!buttons.activeSelf) buttons.SetActive(true);
     }
 }
