@@ -31,7 +31,6 @@ public class Panel : MonoBehaviour {
 
     public void PanelOff() {
         if (panel.activeSelf){
-            print("Button is working!");
             panel.SetActive(false);
             buttons.SetActive(true);
         }

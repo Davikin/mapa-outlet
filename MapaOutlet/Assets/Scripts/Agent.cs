@@ -13,6 +13,7 @@ public class Agent : MonoBehaviour {
     private Vector3 initialPosition;
     public List<GameObject> activatedIndicators = new List<GameObject>();
     public bool activatingMeshes = false;
+    public GameObject destello;
 
     // Use this for initialization
     void Start() {
@@ -51,6 +52,10 @@ public class Agent : MonoBehaviour {
         if (col.tag == "indicadores") {
             if (!col.gameObject.name.Contains("added")) {
                 activatedIndicators.Add(col.gameObject);
+                GameObject nuevoDestello = Instantiate(destello);
+                nuevoDestello.transform.SetParent(col.transform);
+                nuevoDestello.transform.localEulerAngles = Vector3.zero;
+                nuevoDestello.transform.localPosition = Vector3.zero;
                 col.gameObject.name += "added";
             }
             if (activatingMeshes) col.gameObject.GetComponent<SpriteRenderer>().enabled = true;
