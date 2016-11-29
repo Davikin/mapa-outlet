@@ -59,6 +59,7 @@ public class Agent : MonoBehaviour {
                 col.gameObject.name += "added";
             }
             if (activatingMeshes) col.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            if (col.GetComponent<LinkToIsland>()) col.GetComponent<LinkToIsland>().island.SetActive(false);
         }
     }
 }
