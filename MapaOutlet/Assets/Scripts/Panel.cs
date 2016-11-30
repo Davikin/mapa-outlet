@@ -10,6 +10,8 @@ public class Panel : MonoBehaviour {
     public Agent agent;
     public bool filterIsActive = false;
     public bool showFlashes = false;
+    public bool showIslands;
+    public GameObject[] islands;
 
     private Animator panelAnim;
 
@@ -22,6 +24,7 @@ public class Panel : MonoBehaviour {
         panelAnim = panel.GetComponent<Animator>();
         panel.SetActive(false);
         if (!Debug.isDebugBuild) Cursor.visible = false;
+        foreach (GameObject island in islands) island.SetActive(showIslands);
     }
 
     public void TogglePanel(ButtonDataObject dataObject) {
@@ -34,6 +37,9 @@ public class Panel : MonoBehaviour {
             if(btn.GetComponent<Button>())
                 btn.GetComponent<Button>().enabled = !panel.activeSelf;
         //buttons.SetActive(!panel.activeSelf);
+        if (showIslands)
+            foreach (GameObject island in islands)
+                island.SetActive(true);
 
         panel.SetActive(!panel.activeSelf);
 
@@ -49,6 +55,9 @@ public class Panel : MonoBehaviour {
     }
 
     IEnumerator WaitAnimation() {
+        if (showIslands)
+            foreach (GameObject island in islands)
+                island.SetActive(true);
         panelAnim.SetTrigger("panelOut");
         yield return new WaitForSeconds(1f); //suponiendo que el fadeout dure 1s
         panel.SetActive(false);
@@ -69,7 +78,14 @@ public class Panel : MonoBehaviour {
         if (!onOrOff) {
             foreach (GameObject indicador in agent.activatedIndicators)
                 indicador.name = indicador.name.Replace("added", "");
-           agent.activatedIndicators.Clear();
+            agent.activatedIndicators.Clear();
+            agent.hideIslands = false;
+            if (showIslands)
+                foreach (GameObject island in islands)
+                    island.SetActive(true);
+        }
+        else {
+            agent.hideIslands = true;
         }
         agent.activatingMeshes = onOrOff;
     }

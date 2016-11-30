@@ -8,12 +8,11 @@ public class Agent : MonoBehaviour {
     public Camera camera3D;
 
     private NavMeshAgent agent;
-    private float spawnTime = 1f;
-    private float spawnCounter = 0;
     private Vector3 initialPosition;
     public List<GameObject> activatedIndicators = new List<GameObject>();
     public bool activatingMeshes = false;
     public GameObject destello;
+    public bool hideIslands = true;
 
     // Use this for initialization
     void Start() {
@@ -59,7 +58,7 @@ public class Agent : MonoBehaviour {
                 col.gameObject.name += "added";
             }
             if (activatingMeshes) col.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            if (col.GetComponent<LinkToIsland>()) col.GetComponent<LinkToIsland>().island.SetActive(false);
+            if (col.GetComponent<LinkToIsland>() && hideIslands) col.GetComponent<LinkToIsland>().island.SetActive(false);
         }
     }
 }
