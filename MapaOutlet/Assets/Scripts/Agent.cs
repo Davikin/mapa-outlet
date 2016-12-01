@@ -10,6 +10,7 @@ public class Agent : MonoBehaviour {
     private NavMeshAgent agent;
     private Vector3 initialPosition;
     public List<GameObject> activatedIndicators = new List<GameObject>();
+    public List<GameObject> touchedIslands = new List<GameObject>();
     public bool activatingMeshes = false;
     public GameObject destello;
     public bool hideIslands = true;
@@ -58,7 +59,10 @@ public class Agent : MonoBehaviour {
                 col.gameObject.name += "added";
             }
             if (activatingMeshes) col.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-            if (col.GetComponent<LinkToIsland>() && hideIslands) col.GetComponent<LinkToIsland>().island.SetActive(false);
+            if (col.GetComponent<LinkToIsland>()) {
+                touchedIslands.Add(col.gameObject);
+                if (hideIslands) col.GetComponent<LinkToIsland>().island.SetActive(false);
+            }
         }
     }
 }

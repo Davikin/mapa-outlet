@@ -85,9 +85,12 @@ public class Panel : MonoBehaviour {
                     island.SetActive(true);
         }
         else {
+            //foreach(GameObject island in agent.touchedIslands) island.GetComponent<LinkToIsland>().island.SetActive(false);
+            //agent.touchedIslands.Clear();
             agent.hideIslands = true;
         }
         agent.activatingMeshes = onOrOff;
+       
     }
 
     public void ButtonsOff() {
