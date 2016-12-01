@@ -80,13 +80,14 @@ public class Panel : MonoBehaviour {
                 indicador.name = indicador.name.Replace("added", "");
             agent.activatedIndicators.Clear();
             agent.hideIslands = false;
+            agent.touchedIslands.Clear();
             if (showIslands)
                 foreach (GameObject island in islands)
                     island.SetActive(true);
         }
         else {
-            //foreach(GameObject island in agent.touchedIslands) island.GetComponent<LinkToIsland>().island.SetActive(false);
-            //agent.touchedIslands.Clear();
+            if(showIslands)
+            foreach (GameObject island in agent.touchedIslands) island.GetComponent<LinkToIsland>().island.SetActive(false);
             agent.hideIslands = true;
         }
         agent.activatingMeshes = onOrOff;

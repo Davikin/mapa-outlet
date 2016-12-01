@@ -52,8 +52,8 @@ public class Buttons : MonoBehaviour {
                     buttonText.GetComponent<Text>().alignment = TextAnchor.MiddleLeft;
                 }
                 else {
-                    buttonTextRect.offsetMin = new Vector2(0f, -13.6f);
-                    buttonTextRect.offsetMax = new Vector2(0f, -13.6f);
+                    buttonTextRect.offsetMin = new Vector2(0f, -20f);
+                    buttonTextRect.offsetMax = new Vector2(0f, -20f);
                 }
 
                 if (child.gameObject.name.Contains("up")) {
