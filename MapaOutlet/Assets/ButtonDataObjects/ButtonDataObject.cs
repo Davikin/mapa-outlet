@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
 [CreateAssetMenu]
 public class ButtonDataObject : ScriptableObject {
 
+    
     public string nombreTienda;
     public string numero;
     public string local;
