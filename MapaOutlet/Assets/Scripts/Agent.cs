@@ -14,6 +14,7 @@ public class Agent : MonoBehaviour {
     public bool activatingMeshes = false;
     public GameObject destello;
     public bool hideIslands = true;
+    private GameObject selectedIsland;
 
     // Use this for initialization
     void Start() {
@@ -24,7 +25,11 @@ public class Agent : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        if (EventSystem.current.currentSelectedGameObject != null && !Panel.Instance.panel.activeSelf && Input.GetMouseButtonDown(0) && (EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("button") || EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("bano") || EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("puerta") || EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("info"))) {
+        if (EventSystem.current.currentSelectedGameObject != null && !Panel.Instance.panel.activeSelf && Input.GetMouseButtonDown(0) && (EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("button") || EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("bano") || EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("puerta") || EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("info") || EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("isla"))) {
+            selectedIsland = null;
+            if (EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("isla"))
+                selectedIsland = EventSystem.current.currentSelectedGameObject;
+
             MoveAgent();     
         }
     }
@@ -61,7 +66,7 @@ public class Agent : MonoBehaviour {
             if (activatingMeshes) col.gameObject.GetComponent<SpriteRenderer>().enabled = true;
             if (col.GetComponent<LinkToIsland>()) {
                 touchedIslands.Add(col.gameObject);
-                if (hideIslands) col.GetComponent<LinkToIsland>().island.SetActive(false);
+                if (hideIslands && col.GetComponent<LinkToIsland>().island != selectedIsland) col.GetComponent<LinkToIsland>().island.SetActive(false);
             }
         }
     }

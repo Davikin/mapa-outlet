@@ -55,11 +55,12 @@ public class PlayMovie : MonoBehaviour {
     public void FillData(ButtonDataObject _dataObj){
         localName = _dataObj.local;
 
-        foreach(Tienda tienda in Panel.Instance.tc.tiendas) {
+        /*foreach(Tienda tienda in Panel.Instance.tc.tiendas) {
             print(tienda.numLocal);
-        }
+        }*/
 
-        foreach(Tienda tienda in Panel.Instance.tc.tiendas) {
+        /* //THIS BLOCK WILL BE USED WHEN WWW XML FINALLY LOADS CORRECTLY
+        foreach (Tienda tienda in Panel.Instance.tc.tiendas) {
             if(localName.Contains(tienda.numLocal)) {
                 print("Found the store!");
                 storeName = tienda.nombre;
@@ -68,6 +69,13 @@ public class PlayMovie : MonoBehaviour {
                 if (storeName.Contains("'")) nombreVideo = nombreVideo.Replace("'","");
             }
         }
+        */
+
+        print("Found the store!");
+        storeName = _dataObj.nombreTienda;
+        phone = _dataObj.numero;
+        nombreVideo = _dataObj.nombreVideo;
+        
 
         logo = null;
         logo = Resources.Load("logos/" + nombreVideo, typeof(Sprite)) as Sprite;
