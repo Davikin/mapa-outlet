@@ -36,6 +36,8 @@ public class Panel : MonoBehaviour {
     public TiendaContainer tc;
     ButtonDataObject[] bdos;
 
+    public Animator guiaColorAnim, mapCleanerAnim;
+
     // Use this for initialization
     void Awake() {
         Instance = this;
@@ -201,5 +203,10 @@ public class Panel : MonoBehaviour {
         }
 
         if (differs) debugText.text += "\t";
+    }
+
+    public void ToggleGuideAndCleaner(bool onOrOff) {
+        guiaColorAnim.SetTrigger(onOrOff ? "in" : "out");
+        mapCleanerAnim.SetTrigger(onOrOff ? "in" : "out");
     }
 }
