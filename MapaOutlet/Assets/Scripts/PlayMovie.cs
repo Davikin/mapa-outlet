@@ -52,17 +52,25 @@ public class PlayMovie : MonoBehaviour {
         ri.texture = black;
     }
 
-    public void FillData(ButtonDataObject _dataObj)
-    {
+    public void FillData(ButtonDataObject _dataObj){
         localName = _dataObj.local;
-        storeName = _dataObj.nombreTienda;
-        phone = _dataObj.numero;
-        nombreVideo = _dataObj.nombreVideo; //tambien sera el nombre para los iconos
+
+        foreach(Tienda tienda in Panel.Instance.tc.tiendas) {
+            print(tienda.numLocal);
+        }
+
+        foreach(Tienda tienda in Panel.Instance.tc.tiendas) {
+            if(localName.Contains(tienda.numLocal)) {
+                print("Found the store!");
+                storeName = tienda.nombre;
+                phone = tienda.nombre;
+                nombreVideo = storeName;
+                if (storeName.Contains("'")) nombreVideo = nombreVideo.Replace("'","");
+            }
+        }
 
         logo = null;
         logo = Resources.Load("logos/" + nombreVideo, typeof(Sprite)) as Sprite;
-        print(logo);
-
         nombreVideo = nombreVideo + ".mp4";
 
         logoImage.enabled = logo != null ? true : false;
@@ -77,12 +85,10 @@ public class PlayMovie : MonoBehaviour {
         localText.text = _dataObj.local;
         
         // Corre video
-        if (nombreVideo.Length > 0)
-        {
+        if (nombreVideo.Length > 0){
             mpc.Load(nombreVideo);
             mpc.Play();
         }
-
     }
 
 }
