@@ -85,25 +85,18 @@ public class Panel : MonoBehaviour {
             print("New input is:\n" + textAsset.text);
             if (display != null) display.text = "New input is:\n" + textAsset.text;
             //Llamar al TiendaLoader
-            CallStoreLoader();
+           StartCoroutine(CallStoreLoader());
         }
         else {
             textAsset = Resources.Load("tiendasNew") as TextAsset;
             print("New input is:\n" + textAsset.text);
             if (display != null) display.text = "New input is:\n" + textAsset.text;
             //Llamar al TiendaLoader
-            CallStoreLoader();
+            StartCoroutine(CallStoreLoader());
         }
 
         bdos = Resources.LoadAll<ButtonDataObject>("ButtonDataObjects/");
 
-        foreach (ButtonDataObject bdo in bdos)
-            foreach (Tienda tienda in tc.tiendas) {
-#if UNITY_EDITOR
-                EditorUtility.SetDirty(bdo);
-#endif
-                if (bdo.local.Contains(tienda.numLocal)) Compare(bdo, tienda);
-            }
     }
 
     public void TogglePanel(ButtonDataObject dataObject) {
@@ -146,11 +139,6 @@ public class Panel : MonoBehaviour {
                 btn.GetComponent<Button>().enabled = true;
     }
 
-    IEnumerator WaitForToggle() {
-
-        yield return new WaitForEndOfFrame();
-    }
-
     public void ToggleIndicators(bool onOrOff) {
         showFlashes = onOrOff;
         foreach (GameObject indicador in agent.activatedIndicators) indicador.GetComponent<SpriteRenderer>().enabled = onOrOff;
@@ -180,11 +168,11 @@ public class Panel : MonoBehaviour {
     public void ButtonsOn() {
         if (!buttons.activeSelf) buttons.SetActive(true);
     }
-    private void CallStoreLoader() {
-        tc = TiendaContainer.Load("tiendasNew");
-        /* foreach (Tienda tienda in tc.tiendas) {
-             print(tienda.nombre + " se encuentra en el local " + tienda.numLocal + ". Su telefono es: " + tienda.phone);
-         }*/
+    private IEnumerator CallStoreLoader() {
+        //It is MANDATORY to include the file:// piece before the URL to load a WWW
+        WWW userFile = new WWW("file://" + Application.persistentDataPath+"/BaseDeDatos_tiendas.xml");
+        yield return userFile;
+        tc = TiendaContainer.Load(userFile);
     }
 
     void Compare(ButtonDataObject _bdo, Tienda _tienda) {

@@ -9,9 +9,10 @@ public class TiendaContainer{
     [XmlArray("tiendas")]
     [XmlArrayItem("tienda")]
     public List<Tienda> tiendas = new List<Tienda>();
+    public static TiendaContainer Load(WWW www) { //The WWW will be loaded from an instance of another class, we use WWW because TextAsset class cannot be used with external files
 
-    public static TiendaContainer Load(string path) {
-        TextAsset _xml = Resources.Load(path) as TextAsset; //obtener el textAsset con el metodo que acabo de desarollar en vez de esto
+        //obtener el textAsset con el metodo que acabo de desarollar en vez de esto
+        WWW _xml = www;
         XmlSerializer serializer = new XmlSerializer(typeof(TiendaContainer));
         StringReader reader = new StringReader(_xml.text);
         TiendaContainer tiendas = serializer.Deserialize(reader) as TiendaContainer;
