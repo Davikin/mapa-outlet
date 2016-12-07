@@ -38,6 +38,8 @@ public class Panel : MonoBehaviour {
 
     public Animator guiaColorAnim, mapCleanerAnim;
 
+    public WWW userFile;
+    public bool loadDataFromXML;
     // Use this for initialization
     void Awake() {
         Instance = this;
@@ -170,7 +172,7 @@ public class Panel : MonoBehaviour {
     }
     private IEnumerator CallStoreLoader() {
         //It is MANDATORY to include the file:// piece before the URL to load a WWW
-        WWW userFile = new WWW("file://" + Application.persistentDataPath+"/BaseDeDatos_tiendas.xml");
+        userFile = new WWW("file://" + Application.persistentDataPath+"/BaseDeDatos_tiendas.xml");
         yield return userFile;
         tc = TiendaContainer.Load(userFile);
     }

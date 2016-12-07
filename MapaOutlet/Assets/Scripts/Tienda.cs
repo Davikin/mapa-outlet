@@ -12,4 +12,7 @@ public class Tienda {
 
     [XmlElement("telefono")]
     public string phone;
+
+    [XmlElement("categoria")]
+    public string category;
 }

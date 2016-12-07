@@ -6,6 +6,9 @@ public class Buttons : MonoBehaviour {
 
     public string storeName;
     public bool XmlIsEnabled;
+    bool dataIsUpdatedFromXML = false;
+    Text localText, numeroText, storeNameText, textComponent;
+    //public SpriteContainer sc; //REQUIRED FOR THE XML-DEPENDENT COLORING FOR THE LOCALS
 
     // Use this for initialization
     void Start() {
@@ -25,7 +28,7 @@ public class Buttons : MonoBehaviour {
                     buttonTextRect.offsetMin = new Vector2(0f, 0f);
                     buttonTextRect.offsetMax = new Vector2(0f, 0f);
                     if (child.gameObject.name.Contains("vertical") || child.gameObject.name.ToLower().Contains("terraza")) {
-                        Text textComponent = buttonText.GetComponent<Text>();
+                        textComponent = buttonText.GetComponent<Text>();
                         if(!child.gameObject.name.Contains("diagonal"))
                             textComponent.resizeTextForBestFit = true;
                         if (!child.gameObject.name.ToLower().Contains("terraza")) {
@@ -89,6 +92,45 @@ public class Buttons : MonoBehaviour {
 	}
 
     void Update(){
+        if (!Panel.Instance.loadDataFromXML) return;
         
+        if(Panel.Instance.tc != null)
+            if (!dataIsUpdatedFromXML) {
+                string localNumber = "";
+                foreach (Transform child in transform) {
+                    if(child.name.IndexOf("+") > 0) {
+                        localNumber = child.name.Substring(child.name.IndexOf("+")+1);
+                        if (localNumber.Contains("#")) localNumber = localNumber.Remove(localNumber.IndexOf("#"));
+                        foreach (Tienda tienda in Panel.Instance.tc.tiendas) {
+                            if(tienda.numLocal == localNumber) {
+                               textComponent = child.GetChild(0).GetComponent<Text>();
+                               textComponent.text  = tienda.nombre;
+
+                                /* //DONT KNOW IF THIS IS REQUIRED, BUT IS A GREAT FEATURE: COLOR EACH LOCAL ACCORDING TO ITS CATEGORY IN XML
+                                foreach (Sprite spr in sc.targetSprites) {
+                                    if (spr.name.ToLower().Contains(tienda.category.ToLower())) {
+                                        child.GetComponent<Image>().sprite = spr;
+                                        break;
+                                    }
+                                } */
+                            }
+                        }
+                    }
+                }
+                dataIsUpdatedFromXML = true;
+            }
     }
+
+    /*
+    // Referenciamos los Text a lo hijos
+        // Hijo 5
+        localText = transform.parent.transform.GetChild(5).GetComponent<Text>();
+        // Hijo 7
+        logoImage = transform.parent.transform.GetChild(7).GetComponent<Image>();
+        logoText = transform.parent.transform.GetChild(7).GetChild(0).GetComponent<Text>();
+        // Hijo 3
+        storeNameText = transform.parent.transform.GetChild(3).GetComponent<Text>();
+        // Hijo 4
+        numeroText = transform.parent.transform.GetChild(4).GetComponent<Text>(); 
+    */
 }
