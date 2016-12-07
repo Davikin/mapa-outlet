@@ -6,96 +6,112 @@
       <telefono>2105912</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="ARENA" local ="A-2">
       <telefono>2105901</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SILVER PLATE" local ="A-3">
       <telefono>2106000</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="NIKE" local ="A-4">
       <telefono>2106506</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="TIME OUT" local ="A-4A">
       <telefono>2106400</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
-    <tienda nombre="ULTRA MUNDO" local ="A-5">
+    <tienda nombre="CHIKIMUNDO" local ="A-5">
       <telefono>2106283</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="JESSY FRANZ" local ="A-5A">
       <telefono>2105491</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="BORSETTA" local ="A-6">
       <telefono>2106280</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="JUGUETRON" local ="A-7">
       <telefono>2106155</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="TENNIS OFF" local ="B-1-2">
       <telefono>2105906-2106057</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="BABY MINK" local ="B-4, B-7">
       <telefono>2106023</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="MABEL" local ="B-5">
       <telefono>2106020</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="CHICCO" local ="B-6">
       <telefono>6889315</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="CHILDREN'S SHOES" local ="C-1-2">
       <telefono>2106944</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="VIA CORTA" local ="C-3">
       <telefono>2106101</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="VITTORIO FORTI" local ="C-5">
       <telefono>2106192</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="RACHELLE" local ="C-6">
@@ -103,84 +119,98 @@
       <!--NO TIENE TELEFONO-->
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="BIZZARRO" local ="C-7B">
       <telefono>2105892-2105958</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="CONVERSE" local ="C-8">
       <telefono>2105891</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="TEDKENTON" local ="D-1">
       <telefono>2105278</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="LEVI'S" local ="D-2">
       <telefono>2105451-2105530</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="CHARLY" local ="D-3">
       <telefono>2319948</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="FERRIONI" local ="D-4">
       <telefono>2106295</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="ZAPATERIA DAVID SERRANO" local ="E-1">
       <telefono>2106456</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="ZAPATERIA ZN" local ="E-2">
       <telefono>2106096</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="GEORGIEBOY" local ="E-3">
       <telefono>2106468</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="VICTORINOX" local ="E-4">
       <telefono>2106025</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="GRUPO VANITY S.A. DE C.V." local ="E-5">
       <telefono>2106059-2106161</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="OGGI JEANS" local ="E-7">
       <telefono>2106059-2106061</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="PERRY ELLIS" local ="G-1">
       <telefono>2106095</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <!--Terminan primeras 30 tiendas-->
@@ -189,420 +219,490 @@
       <telefono>2106576,2106419,5548332643</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="LA CAMISERIA" local ="A-9">
       <telefono>2106623,2106103</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="NUTRISSA" local ="F-1">
       <telefono>2105693</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="LA FONDA DE SANTA CLARA" local ="F-10">
       <telefono>6889399</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SUBWAY" local ="F-11">
       <telefono>2106278</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="TRIPOLI" local ="F-12">
       <telefono>2106482</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SHIRUSHI" local ="F-13">
       <telefono>2105090</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="BORSETTA" local ="A-6">
       <telefono>2106280</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="ITALIAN COFFEE" local ="F-14">
       <telefono>2106075</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="EL SUPERPRONTO" local ="F-15">
       <telefono>2106030</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="FRESH &amp; CREPES" local ="F-2">
       <telefono>2105378</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="7 CHILES" local ="F-3">
       <telefono>2105638</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="FISH &amp; GAMBAS" local ="F-4">
       <telefono>2106161</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="LEBNAN" local ="F-5">
       <telefono>2105168</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="DOMINO'S PIZZA" local ="F-6">
       <telefono>2106210,2106285</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="FOOD SITE" local ="F-7">
       <telefono>2105972,2223243471</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SVAGO EXPRESS" local ="F-8">
       <telefono>2106302</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="LA CUEVA DEL ZORRO" local ="F-9">
       <telefono>2105935</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="ROCK HAMPTON" local ="G-2">
       <telefono>2106175</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="LA BOUTIQUE" local ="G-3">
       <telefono>2105836</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SPORT OUTLET" local ="G-7, G-8">
       <telefono>2105280</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="FUROR" local ="H-1">
       <telefono>2105939</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="MARSEL" local ="H-2">
       <telefono>2106065</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="VIA URBANA" local ="H-4">
       <telefono>2105594</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="LIZ MINELLI" local ="H-4A">
       <telefono>2106122</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SAMSONITE" local ="H-4B">
       <telefono>2105304,2105871</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="REEBOK" local ="I-1">
       <telefono>2106111,2106110</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="ROCK PORT" local ="I-2">
       <telefono>2106579</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="VICKY FORM" local ="I-3">
       <telefono>2106501</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="MEN'S FACTORY" local ="I-5">
       <telefono>2106174</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="STYLO" local ="J-1">
       <telefono>2105584,2222105584</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="URBAN" local ="J-2">
       <telefono>2106565</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="CAVALIER" local ="J-4">
       <telefono>2106037,2106016</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="LA CAMISERIA" local ="J-8">
       <telefono>2106103</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="ARMI KOAJ" local ="K-1">
       <telefono>2106017</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="CALVIN KLEIN" local ="K-8">
       <telefono>2105319</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="PEPE JEANS" local ="L-1">
       <telefono>2105999</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="VERTICHE" local ="L-2-4">
       <telefono>2106013</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="BROOKS BROTHER" local ="L-3">
       <telefono>2105350</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="VANITY" local ="M-1">
       <telefono>2106532,2106533</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="OUTLET DEPORTES" local ="M-2">
       <telefono>2106672</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="NAUTICA" local ="N-1">
       <telefono>2106200,2106201</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="" local ="N-2">
       <telefono></telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SPEEDO" local ="N-3">
       <telefono>6885911</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="VIPS" local ="N-4">
       <telefono>2106128,2105892</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="BANCOMER" local ="N-5">
       <telefono>2106669</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="TOMMY HILFIGER" local ="N-6">
       <telefono>2105655</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="AREA CODE" local ="N-7">
       <telefono>2106277</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="VANS" local ="O-1">
       <telefono>2105899</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SPRINGFIELD" local ="O-2">
       <telefono>6885801</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="WILSON" local ="O-2A">
       <telefono>2221173328</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="GILLIO" local ="O-3A">
       <telefono>2106589,2106661</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="TRUE RELIGION" local ="O-4">
       <telefono>2319946</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="BRANTANO" local ="O-5">
       <telefono>O-5</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="NINE WEST" local ="O-6">
       <telefono>2106377</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SALOMON" local ="P-1">
       <telefono>2106180,7641135227</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="BENETTON" local ="P-2">
       <telefono>2106132</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SAVI JEANS" local ="P-3A">
       <telefono>2106381</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="CROCS" local ="P-3B">
       <telefono>6889313</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="CAPA DE OZONO" local ="P-4">
       <telefono>2105165</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="FERRAGAMO" local ="P-5">
       <telefono>2319958</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="ADOLFO DOMINGUEZ" local ="P-6">
       <telefono>2106659</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SOLARIS" local ="P-6A">
       <telefono>2105096</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="JULIO" local ="P-7">
       <telefono>2106063,1417503</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="FLEXI" local ="Q-1">
       <telefono>2106449</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="MANGO" local ="Q-10">
       <telefono>2106603</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="REDUCED" local ="Q-2">
       <telefono>2319963</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SKECHERS" local ="Q-3">
       <telefono>2106491,2106577</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SWAROVSKI" local ="Q-4A">
       <telefono>2106394</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="HUGO BOSS" local ="Q-4B">
       <telefono>2106681</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <!--HASTA AQUI 28/NOV/2016-->
@@ -611,180 +711,210 @@
       <telefono>2106060</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="IVONNE" local ="Q-6">
       <telefono>2106198</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="ROBERTS" local ="Q-7">
       <telefono>2105634</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="REWIND" local ="Q-8">
       <telefono>2106384</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="BCBG" local ="Q-9">
       <telefono>2319945</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="GUESS" local ="R-1">
       <telefono>2106188</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="CLOE" local ="R-2">
       <telefono>2106338</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="PRADA" local ="R-3A">
       <telefono>2106418</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SUNGLASS HUT" local ="R-3B">
       <telefono>2106399</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="LACOSTE" local ="R-4">
       <telefono>2106664</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="MCDONALD'S" local ="S-1">
       <telefono>2106440</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="FRAGANCIAS EUROPEAS" local ="T-10">
       <telefono></telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="NEXTEL" local ="T-12">
       <telefono></telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="BIANNE ALMOHADAS" local ="T-13">
       <telefono></telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="KRISPY KREME" local ="T-2">
       <telefono>2106048</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SHYNE" local ="T-3">
       <telefono></telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SOLARIS" local ="T-4">
       <telefono>2105096</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="COCCINELLE" local ="T-5">
       <telefono>2105605</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="L'OCCITANE" local ="T-6">
       <telefono>2106446</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SOLARIS" local ="T-8">
       <telefono>2105096</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="STUDIO F" local ="U-1">
       <telefono>2106106,6885831</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="NIKE" local ="V-1">
       <telefono>2105523</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SARI SILVER" local ="Z-1">
       <telefono></telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="ACCESORIOS MOVIL" local ="Z-12">
       <telefono></telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="RELOJES LUXURY" local ="Z-2">
       <telefono>2105327</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SOLARIS" local ="Z-3">
       <telefono>2105096</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="DOTIQUE" local ="Z-5">
       <telefono></telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SOLARIS" local ="Z-6">
       <telefono></telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="SOLARIS" local ="Z-7">
       <telefono>2105096</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
     <tienda nombre="UNDER ARMOUR" local ="Z-8">
       <telefono>2221628764</telefono>
       <rutaVideo></rutaVideo>s
       <descripcion></descripcion>
+			<categoria></categoria>
     </tienda>
 
   </tiendas>
