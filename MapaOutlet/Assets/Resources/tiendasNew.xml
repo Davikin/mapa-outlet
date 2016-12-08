@@ -560,7 +560,7 @@
 			<categoria>AMBOS</categoria>
     </tienda>
 
-    <tienda nombre="SPRINGFIELD" local ="O-2">
+    <tienda nombre="SPRINGFIELD" local ="O-2B">
       <telefono>6885801</telefono>
       <rutaVideo></rutaVideo>
       <descripcion></descripcion>
