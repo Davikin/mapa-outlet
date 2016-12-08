@@ -71,11 +71,17 @@ public class PlayMovie : MonoBehaviour {
         }
         */
 
-        print("Found the store!");
-        storeName = _dataObj.nombreTienda;
-        phone = _dataObj.numero;
-        nombreVideo = _dataObj.nombreVideo;
-        
+        if (Panel.Instance.loadDataFromXML && Panel.Instance.tc != null) {
+            foreach () {
+
+            }
+        }
+        else {
+            print("Found the store!");
+            storeName = _dataObj.nombreTienda;
+            phone = _dataObj.numero;
+            nombreVideo = _dataObj.nombreVideo;
+        }
 
         logo = null;
         logo = Resources.Load("logos/" + nombreVideo, typeof(Sprite)) as Sprite;
