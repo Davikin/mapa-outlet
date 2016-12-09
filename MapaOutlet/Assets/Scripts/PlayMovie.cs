@@ -54,6 +54,7 @@ public class PlayMovie : MonoBehaviour {
 
     public void FillData(ButtonDataObject _dataObj){
         localName = _dataObj.local;
+        phone = "";
 
         /*foreach(Tienda tienda in Panel.Instance.tc.tiendas) {
             print(tienda.numLocal);
@@ -72,12 +73,35 @@ public class PlayMovie : MonoBehaviour {
         */
 
         if (Panel.Instance.loadDataFromXML && Panel.Instance.tc != null) {
-            foreach () {
+            print("Xml is ready to load!");
+            string searchedLocal = _dataObj.local.Replace("LOCAL ","");
+            foreach (Tienda tienda in Panel.Instance.tc.tiendas) {
+                if(tienda.numLocal == searchedLocal) { //We won't use the .Contains() statement because if we search A-4, we can match A-4A, scrambling info between locals with similar starts
+                    print("Found the local in XML");
+                    storeName = tienda.nombre;
 
+                    if (tienda.phone.Length == 7) phone = tienda.phone.Insert(3, ".").Insert(6, ".");
+                    else if (tienda.phone.Length > 7) {
+                        if (tienda.phone.Contains(",")) {
+                            string[] phones = phone.Split(new char[] { ',' });
+                            for(int i = 0; i <= phones.Length-1; i++) {
+                                if(phones[i].Length == 7) phone += phones[i].Insert(3, ".").Insert(6, ".");
+                                else if(phones[i].Length > 7) phone += phones[i].Insert(3, ".").Insert(7, ".");
+                                if (i < phones.Length - 1) phone += ",";
+                            }
+                        }
+                        else phone = tienda.phone.Insert(3, ".").Insert(7, ".");
+                    }
+                    else phone = "Tel\u00e9fono no disponible";
+
+                    nombreVideo = tienda.nombre;
+                    if (nombreVideo.Contains("'")) nombreVideo = nombreVideo.Replace("'", "");
+                    break;
+                }
             }
         }
         else {
-            print("Found the store!");
+            print("Did not find the local in XML");
             storeName = _dataObj.nombreTienda;
             phone = _dataObj.numero;
             nombreVideo = _dataObj.nombreVideo;
@@ -95,7 +119,7 @@ public class PlayMovie : MonoBehaviour {
         logoText.text = storeName;
 
         storeNameText.text = storeName;
-        numeroText.text = _dataObj.numero;
+        numeroText.text = phone;
         localText.text = _dataObj.local;
         
         // Corre video

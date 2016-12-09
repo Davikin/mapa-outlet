@@ -53,8 +53,6 @@ public class Panel : MonoBehaviour {
 
         userDirectory = Application.persistentDataPath; //The persistent data path is not available 
 
-        print(userDirectory);
-
         print("The persistent data path is: " + userDirectory);
 
         //do nothing until previous file finishes being deleted
@@ -84,14 +82,14 @@ public class Panel : MonoBehaviour {
         textAsset = Resources.Load("tiendasNew") as TextAsset;
 
         if (Resources.Load("tiendasNew")) {
-            print("New input is:\n" + textAsset.text);
+            //print("New input is:\n" + textAsset.text);
             if (display != null) display.text = "New input is:\n" + textAsset.text;
             //Llamar al TiendaLoader
            StartCoroutine(CallStoreLoader());
         }
         else {
             textAsset = Resources.Load("tiendasNew") as TextAsset;
-            print("New input is:\n" + textAsset.text);
+            //print("New input is:\n" + textAsset.text);
             if (display != null) display.text = "New input is:\n" + textAsset.text;
             //Llamar al TiendaLoader
             StartCoroutine(CallStoreLoader());
