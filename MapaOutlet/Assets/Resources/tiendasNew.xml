@@ -1,6 +1,7 @@
 <?xml version = "1.0" encoding ="UTF-8"?>
 <!--/////////////////////////////NOTAS PARA EDITAR ESTE ARCHIVO/////////////////////////////////////////////-->
 <!--Si el nombre de algun local requiere un salto de línea, debe insertar la clave de cinco caracteres &#10; en donde se requiera este salto de línea-->
+<!-- No duplique numeros de local -->
 <TiendasGrupo>
   <tiendas>
 
@@ -248,12 +249,6 @@
       <telefono>2105090</telefono>
       <descripcion></descripcion>
       <categoria>COMIDA</categoria>
-    </tienda>
-
-    <tienda nombre="BORSETTA" local ="A-6">
-      <telefono>2106280</telefono>
-      <descripcion></descripcion>
-      <categoria>ACCESORIOS</categoria>
     </tienda>
 
     <tienda nombre="ITALIAN&#10;COFFEE" local ="F-14">
@@ -730,6 +725,12 @@
       <categoria>ISLA</categoria>
     </tienda>
 
+    <tienda nombre="CANDY OUTLET" local ="T-1">
+      <telefono></telefono>
+      <descripcion></descripcion>
+      <categoria>OTROS</categoria>
+    </tienda>
+
     <tienda nombre="KRISPY KREME" local ="T-2">
       <telefono>2106048</telefono>
       <descripcion></descripcion>
@@ -788,6 +789,12 @@
       <telefono></telefono>
       <descripcion></descripcion>
       <categoria>ISLA</categoria>
+    </tienda>
+
+    <tienda nombre="CANDY OUTLET" local ="Z-13">
+      <telefono></telefono>
+      <descripcion></descripcion>
+      <categoria>OTROS</categoria>
     </tienda>
 
     <tienda nombre="RELOJES LUXURY" local ="Z-2">

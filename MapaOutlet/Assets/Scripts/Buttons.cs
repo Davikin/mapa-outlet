@@ -8,7 +8,7 @@ public class Buttons : MonoBehaviour {
     public bool XmlIsEnabled;
     bool dataIsUpdatedFromXML = false;
     Text localText, numeroText, storeNameText, textComponent;
-    //public SpriteContainer sc; //REQUIRED FOR THE XML-DEPENDENT COLORING FOR THE LOCALS
+    public SpriteContainer sc; //REQUIRED FOR THE XML-DEPENDENT COLORING FOR THE LOCALS
 
     // Use this for initialization
     void Start() {
@@ -91,46 +91,55 @@ public class Buttons : MonoBehaviour {
         }
 	}
 
-    void Update(){
-        if (!Panel.Instance.loadDataFromXML) return;
+    void Update(){ //Este bloque Update se asegura de que los colores de todos los locales se actualicen de acuerdo a los datos del XML
+        if (!Panel.Instance.loadDataFromXML) return; //¿Elegi NO cargar el XML? No hacer nada de lo que sigue en el Update
         
-        if(Panel.Instance.tc != null)
-            if (!dataIsUpdatedFromXML) {
+        if(Panel.Instance.tc != null) //¿Ya está cargado el XML? Esto es necesario porque el XML no se carga instantaneamente
+            if (!dataIsUpdatedFromXML) { //¿Ya se realizó la carga del XML?
                 string localNumber = "";
                 foreach (Transform child in transform) {
-                    if(child.name.IndexOf("+") > 0) {
+                    string colorSuffix = "";
+                    Color colorToAssign = new Color(0,0,0);
+                    Image currentImage = child.GetComponent<Image>();
+                    if (child.name.IndexOf("+") > 0 || child.name.Contains("isla")) {
                         localNumber = child.name.Substring(child.name.IndexOf("+")+1);
                         if (localNumber.Contains("#")) localNumber = localNumber.Remove(localNumber.IndexOf("#"));
                         foreach (Tienda tienda in Panel.Instance.tc.tiendas) {
-                            if(tienda.numLocal == localNumber) {
-                               textComponent = child.GetChild(0).GetComponent<Text>();
-                               textComponent.text  = tienda.nombre;
+                            if (tienda.numLocal == localNumber) {
+                                textComponent = child.GetChild(0).GetComponent<Text>();
+                                textComponent.text = tienda.nombre;
 
-                                /* //DONT KNOW IF THIS IS REQUIRED, BUT IS A GREAT FEATURE: COLOR EACH LOCAL ACCORDING TO ITS CATEGORY IN XML
-                                foreach (Sprite spr in sc.targetSprites) {
-                                    if (spr.name.ToLower().Contains(tienda.category.ToLower())) {
-                                        child.GetComponent<Image>().sprite = spr;
-                                        break;
-                                    }
-                                } */
+                                //DONT KNOW IF THIS IS REQUIRED, BUT IS A GREAT FEATURE: COLOR EACH LOCAL ACCORDING TO ITS CATEGORY IN XML
+                                
+                                if (!child.name.ToLower().Contains("poligon")) currentImage.sprite = sc.whiteSprite;
+                                colorToAssign = new Color(0, 0, 0);
+                                colorSuffix = "";
+                                switch (tienda.category.ToUpper()) {
+                                    case "DAMA": colorToAssign = new Color(192f / 255, 54f / 255, 118f / 255); colorSuffix = "magenta"; break;
+                                    case "CABALLERO": colorToAssign = new Color(72f / 255, 117f / 255, 178f / 255); colorSuffix = "azul"; break;
+                                    case "AMBOS": colorToAssign = new Color(230f / 255, 192f / 255, 67f / 255); colorSuffix = "amarillo"; break;
+                                    case "NIÑOS": colorToAssign = new Color(95f / 255, 82f / 255, 151f / 255); colorSuffix = "morado"; break;
+                                    case "DEPORTES": colorToAssign = new Color(213f / 255, 133f / 255, 36f / 255); colorSuffix = "naranja"; break;
+                                    case "ZAPATOS": colorToAssign = new Color(118f / 255, 168f / 255, 74f / 255); colorSuffix = "verde"; break;
+                                    case "ACCESORIOS": colorToAssign = new Color(127f / 255, 183f / 255, 181f / 255); colorSuffix = "turquesa"; break;
+                                    case "COMIDA": colorToAssign = new Color(153f / 255, 32f / 255, 29f / 255); colorSuffix = "rojo"; break;
+                                    case "OTROS": colorToAssign = new Color(5f / 255, 57f / 255, 134f / 255); colorSuffix = "indigo"; break;
+                                }
                             }
                         }
+                        if (colorSuffix != "") {
+                            currentImage.color = colorToAssign;
+                            child.name += "@" + colorSuffix;
+                        }
+                    }
+                    if (child.name.Contains("isla") && colorSuffix == "") {
+                        colorToAssign = new Color(213f / 255, 138f / 255, 144f / 255);
+                        colorSuffix = "salmon";
+                        currentImage.color = colorToAssign;
+                        child.name += "@" + colorSuffix;
                     }
                 }
-                dataIsUpdatedFromXML = true;
+                dataIsUpdatedFromXML = true; //La carga del XML ya se realizó, lo ponemos en true para evitar que la carga se repita
             }
     }
-
-    /*
-    // Referenciamos los Text a lo hijos
-        // Hijo 5
-        localText = transform.parent.transform.GetChild(5).GetComponent<Text>();
-        // Hijo 7
-        logoImage = transform.parent.transform.GetChild(7).GetComponent<Image>();
-        logoText = transform.parent.transform.GetChild(7).GetChild(0).GetComponent<Text>();
-        // Hijo 3
-        storeNameText = transform.parent.transform.GetChild(3).GetComponent<Text>();
-        // Hijo 4
-        numeroText = transform.parent.transform.GetChild(4).GetComponent<Text>(); 
-    */
 }
