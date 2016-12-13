@@ -1,7 +1,7 @@
 <?xml version = "1.0" encoding ="UTF-8"?>
-<!--/////////////////////////////NOTAS PARA EDITAR ESTE ARCHIVO/////////////////////////////////////////////-->
-<!--Si el nombre de algun local requiere un salto de línea, debe insertar la clave de cinco caracteres &#10; en donde se requiera este salto de línea-->
-<!-- No duplique numeros de local -->
+<!--*******************NOTAS PARA EDITAR ESTE ARCHIVO*******************-->
+<!--Si el nombre de algún local requiere un salto de línea, debe insertar la clave de cinco caracteres &#10; en donde se requiera este salto de línea-->
+<!-- No duplique números de local -->
 <TiendasGrupo>
   <tiendas>
 
@@ -719,7 +719,7 @@
       <categoria>OTROS</categoria>
     </tienda>
 
-    <tienda nombre="BIANNE ALMOHADAS" local ="T-13">
+    <tienda nombre="BIANNE" local ="T-13">
       <telefono></telefono>
       <descripcion></descripcion>
       <categoria>ISLA</categoria>
@@ -818,7 +818,7 @@
     <tienda nombre="SOLARIS" local ="Z-6">
       <telefono></telefono>
       <descripcion></descripcion>
-      <categoria>ISLA</categoria>
+      <categoria>DEPORTES</categoria>
     </tienda>
 
     <tienda nombre="SOLARIS" local ="Z-7">

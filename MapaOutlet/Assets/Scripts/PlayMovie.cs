@@ -98,6 +98,12 @@ public class PlayMovie : MonoBehaviour {
                     if (nombreVideo.Contains("'")) nombreVideo = nombreVideo.Replace("'", "");
                     break;
                 }
+                else {
+                    print("Did not find the local in XML");
+                    storeName = _dataObj.nombreTienda;
+                    phone = _dataObj.numero;
+                    nombreVideo = _dataObj.nombreVideo;
+                }
             }
         }
         else {
