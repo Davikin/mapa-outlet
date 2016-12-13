@@ -509,10 +509,10 @@
       <categoria>DAMA</categoria>
     </tienda>
 
-    <tienda nombre="MISTER DAMZZZ" local ="O-1">
-      <telefono>33333333</telefono>
+    <tienda nombre="VANS" local ="O-1">
+      <telefono>2105899</telefono>
       <descripcion></descripcion>
-      <categoria>AMBOS</categoria>
+      <categoria>DEPORTES</categoria>
     </tienda>
 
     <tienda nombre="SPRINGFIELD" local ="O-2B">

@@ -51,16 +51,15 @@ public class Panel : MonoBehaviour {
         if (!Debug.isDebugBuild) Cursor.visible = false;
         foreach (GameObject island in islands) island.SetActive(showIslands);
 
-        userDirectory = Application.persistentDataPath; //The persistent data path is not available 
+        userDirectory = Application.dataPath; //The persistent data path is not available 
 
-        print("The persistent data path is: " + userDirectory);
+        print("El XML editable se encuentra en " + userDirectory);
 
         //do nothing until previous file finishes being deleted
         while (File.Exists(Application.dataPath + "/Resources/tiendasNew.xml")) File.Delete(Application.dataPath + "/Resources/tiendasNew.xml");
-
-        //print(Application.persistentDataPath);	
+	
         textAsset = Resources.Load("tiendas") as TextAsset;
-        print(textAsset.text); //Content before overwriting it with user changes in the outer xml file
+        //print(textAsset.text); //Content before overwriting it with user changes in the outer xml file
         if (!Directory.Exists(userDirectory)) { //if the directory with outer xml does not exist...
             Directory.CreateDirectory(userDirectory); //... create it!
         }
@@ -170,7 +169,7 @@ public class Panel : MonoBehaviour {
     }
     private IEnumerator CallStoreLoader() {
         //It is MANDATORY to include the file:// piece before the URL to load a WWW
-        userFile = new WWW("file://" + Application.persistentDataPath+"/BaseDeDatos_tiendas.xml");
+        userFile = new WWW("file://" + Application.dataPath+"/BaseDeDatos_tiendas.xml");
         yield return userFile;
         tc = TiendaContainer.Load(userFile);
     }
