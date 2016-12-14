@@ -114,6 +114,7 @@ public class PlayMovie : MonoBehaviour {
         }
 
         logo = null;
+        if (nombreVideo.Contains("\n")) { nombreVideo = nombreVideo.Replace("\n", " "); print("Replaced metacharacter newline"); }
         logo = Resources.Load("logos/" + nombreVideo, typeof(Sprite)) as Sprite;
         nombreVideo = nombreVideo + ".mp4";
 
@@ -125,8 +126,10 @@ public class PlayMovie : MonoBehaviour {
         logoText.text = storeName;
 
         storeNameText.text = storeName;
+        if(!phone.Contains("disponible")) phone = "Tel. "+phone;
         numeroText.text = phone;
-        localText.text = _dataObj.local;
+        if(!_dataObj.local.ToUpper().Contains("LOCAL") && !_dataObj.local.ToUpper().Contains("N/A")) localText.text = "LOCAL "+_dataObj.local;
+        else localText.text = _dataObj.local;
         
         // Corre video
         if (nombreVideo.Length > 0){

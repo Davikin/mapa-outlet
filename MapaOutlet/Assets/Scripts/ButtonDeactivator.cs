@@ -10,6 +10,14 @@ public class ButtonDeactivator : MonoBehaviour {
         Panel.Instance.ButtonsOn();
     }
 
+    public void CallActivateButtons() {
+        Panel.Instance.ActivateButtons();
+    }
+
+    public void CallDeactivateButtons() {
+        Panel.Instance.DeactivateButtons();
+    }
+
     public void CallGuideOn() {
         Panel.Instance.ToggleGuideAndCleaner(true);
     }

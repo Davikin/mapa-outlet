@@ -57,7 +57,7 @@ public class Panel : MonoBehaviour {
 
         //do nothing until previous file finishes being deleted
         while (File.Exists(Application.dataPath + "/Resources/tiendasNew.xml")) File.Delete(Application.dataPath + "/Resources/tiendasNew.xml");
-	
+
         textAsset = Resources.Load("tiendas") as TextAsset;
         //print(textAsset.text); //Content before overwriting it with user changes in the outer xml file
         if (!Directory.Exists(userDirectory)) { //if the directory with outer xml does not exist...
@@ -84,7 +84,7 @@ public class Panel : MonoBehaviour {
             //print("New input is:\n" + textAsset.text);
             if (display != null) display.text = "New input is:\n" + textAsset.text;
             //Llamar al TiendaLoader
-           StartCoroutine(CallStoreLoader());
+            StartCoroutine(CallStoreLoader());
         }
         else {
             textAsset = Resources.Load("tiendasNew") as TextAsset;
@@ -105,7 +105,7 @@ public class Panel : MonoBehaviour {
         }
 
         foreach (Transform btn in buttons.transform)
-            if(btn.GetComponent<Button>())
+            if (btn.GetComponent<Button>())
                 btn.GetComponent<Button>().enabled = !panel.activeSelf;
 
         if (showIslands)
@@ -114,7 +114,7 @@ public class Panel : MonoBehaviour {
 
         panel.SetActive(!panel.activeSelf);
 
-        if (panel.activeSelf) { 
+        if (panel.activeSelf) {
             play.FillData(dataObject);
         }
     }
@@ -141,6 +141,7 @@ public class Panel : MonoBehaviour {
     public void ToggleIndicators(bool onOrOff) {
         showFlashes = onOrOff;
         foreach (GameObject indicador in agent.activatedIndicators) indicador.GetComponent<SpriteRenderer>().enabled = onOrOff;
+
         if (!onOrOff) {
             foreach (GameObject indicador in agent.activatedIndicators)
                 indicador.name = indicador.name.Replace("added", "");
@@ -152,12 +153,22 @@ public class Panel : MonoBehaviour {
                     island.SetActive(true);
         }
         else {
-            if(showIslands)
-            foreach (GameObject island in agent.touchedIslands) island.GetComponent<LinkToIsland>().island.SetActive(false);
+            if (showIslands)
+                foreach (GameObject island in agent.touchedIslands) island.GetComponent<LinkToIsland>().island.SetActive(false);
             agent.hideIslands = true;
         }
         agent.activatingMeshes = onOrOff;
-       
+
+    }
+
+    public void ActivateButtons() {
+        foreach (Transform btn in buttons.transform)
+            btn.GetComponent<Button>().enabled = true;
+    }
+
+    public void DeactivateButtons() {
+        foreach (Transform btn in buttons.transform)
+            btn.GetComponent<Button>().enabled = false;
     }
 
     public void ButtonsOff() {
@@ -193,6 +204,7 @@ public class Panel : MonoBehaviour {
     }
 
     public void ToggleGuideAndCleaner(bool onOrOff) {
+        
         guiaColorAnim.SetTrigger(onOrOff ? "in" : "out");
         mapCleanerAnim.SetTrigger(onOrOff ? "in" : "out");
     }

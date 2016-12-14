@@ -161,13 +161,13 @@
       <categoria>ZAPATOS</categoria>
     </tienda>
 
-    <tienda nombre="ZAPATERIA ZN" local ="E-2">
+    <tienda nombre="ZN ZAPATERIAS" local ="E-2">
       <telefono>2106096</telefono>
       <descripcion></descripcion>
       <categoria>ZAPATOS</categoria>
     </tienda>
 
-    <tienda nombre="GEORGIEBOY" local ="E-3">
+    <tienda nombre="GEORGIE BOY" local ="E-3">
       <telefono>2106468</telefono>
       <descripcion></descripcion>
       <categoria>NIÑOS</categoria>
@@ -299,7 +299,7 @@
       <categoria>COMIDA</categoria>
     </tienda>
 
-    <tienda nombre="SVAGO&#10;EXPRESS" local ="F-8">
+    <tienda nombre="SKUISITO" local ="F-8">
       <telefono>2106302</telefono>
       <descripcion></descripcion>
       <categoria>COMIDA</categoria>
@@ -413,7 +413,7 @@
       <categoria>CABALLERO</categoria>
     </tienda>
 
-    <tienda nombre="LA CAMISERIA" local ="J-8">
+    <tienda nombre="LA CAMISERIA PREMIER" local ="J-8">
       <telefono>2106103</telefono>
       <descripcion></descripcion>
       <categoria>CABALLERO</categoria>
@@ -581,7 +581,7 @@
       <categoria>ZAPATOS</categoria>
     </tienda>
 
-    <tienda nombre="FERRAGAMO" local ="P-5">
+    <tienda nombre="SALVATORE&#10;FERRAGAMO" local ="P-5">
       <telefono>2319958</telefono>
       <descripcion></descripcion>
       <categoria>AMBOS</categoria>
@@ -611,7 +611,7 @@
       <categoria>ZAPATOS</categoria>
     </tienda>
 
-    <tienda nombre="MANGO" local ="Q-10">
+    <tienda nombre="MANGO&#10;OUTLET" local ="Q-10">
       <telefono>2106603</telefono>
       <descripcion></descripcion>
       <categoria>DAMA</categoria>
@@ -719,13 +719,13 @@
       <categoria>OTROS</categoria>
     </tienda>
 
-    <tienda nombre="BIANNE ALMOHADAS" local ="T-13">
+    <tienda nombre="BIANNE" local ="T-13">
       <telefono></telefono>
       <descripcion></descripcion>
       <categoria>ISLA</categoria>
     </tienda>
 
-    <tienda nombre="CANDY OUTLET" local ="T-1">
+    <tienda nombre="CANDY OUTLET&#10;PREMIER" local ="T-1">
       <telefono></telefono>
       <descripcion></descripcion>
       <categoria>OTROS</categoria>
@@ -785,7 +785,7 @@
       <categoria>ISLA</categoria>
     </tienda>
 
-    <tienda nombre="ACCESORIOS MOVIL" local ="Z-12">
+    <tienda nombre="PISA" local ="Z-12">
       <telefono></telefono>
       <descripcion></descripcion>
       <categoria>ISLA</categoria>
