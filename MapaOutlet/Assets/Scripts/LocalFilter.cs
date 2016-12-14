@@ -27,8 +27,22 @@ public class LocalFilter : MonoBehaviour {
                     }
                     else {
                         string colorSuffix = b.name.Substring(b.name.IndexOf("@")+1);
-                        if (!colorSuffix.Contains(targetColor))
-                            b.GetComponent<Image>().color = new Color(0.5f,0.5f,0.5f);
+                        if (!colorSuffix.Contains(targetColor)) {
+                            Color colorToAssign = new Color();
+                            switch (colorSuffix.ToLower()) {
+                                case "magenta": colorToAssign = new Color(123f/255, 123f / 255, 123f / 255); break;
+                                case "azul": colorToAssign = new Color(125f / 255, 125f / 255, 125f / 255); break;
+                                case "amarillo": colorToAssign = new Color(148f / 255, 148f / 255, 148f / 255); break;
+                                case "morado": colorToAssign = new Color(116f / 255, 116f / 255, 116f / 255); break;
+                                case "naranja": colorToAssign = new Color(124f / 255, 124f / 255, 124f / 255); break;
+                                case "verde": colorToAssign = new Color(121f / 255, 121f / 255, 121f / 255); break;
+                                case "turquesa": colorToAssign = new Color(155f / 255, 155f / 255, 155f / 255); break;
+                                case "rojo": colorToAssign = new Color(91f / 255, 91f / 255, 91f / 255); break;
+                                case "indigo": colorToAssign = new Color(69f / 255, 69f / 255, 69f / 255); break;
+                                case "salmon": colorToAssign = new Color(175f/255, 175f / 255, 175f / 255); break;
+                            }
+                            b.GetComponent<Image>().color = colorToAssign;
+                        }
                     }
                     Panel.Instance.filterIsActive = true;
                 }
