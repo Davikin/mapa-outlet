@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class Buttons : MonoBehaviour {
 
     public string storeName;
-    public bool XmlIsEnabled;
     bool dataIsUpdatedFromXML = false;
     Text localText, numeroText, storeNameText, textComponent;
     public SpriteContainer sc; //REQUIRED FOR THE XML-DEPENDENT COLORING FOR THE LOCALS
@@ -64,7 +63,7 @@ public class Buttons : MonoBehaviour {
                     buttonTextRect.offsetMax = new Vector2(0f, 13.6f); ;
                 }
             }
-            if (child.gameObject.name.Contains(".") && !XmlIsEnabled) {
+            if (child.gameObject.name.Contains(".")) {
                 int dashIndex = child.gameObject.name.IndexOf(".");
                 storeName = child.gameObject.name.Substring(dashIndex + 1);
                 if (storeName.Contains(" 01")) storeName = storeName.Replace(" 01","");

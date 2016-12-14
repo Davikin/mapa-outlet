@@ -163,12 +163,12 @@ public class Panel : MonoBehaviour {
 
     public void ActivateButtons() {
         foreach (Transform btn in buttons.transform)
-            btn.GetComponent<Button>().enabled = true;
+            if (btn.GetComponent<Button>() != null) btn.GetComponent<Button>().enabled = true;
     }
 
     public void DeactivateButtons() {
         foreach (Transform btn in buttons.transform)
-            btn.GetComponent<Button>().enabled = false;
+            if(btn.GetComponent<Button>() != null) btn.GetComponent<Button>().enabled = false;
     }
 
     public void ButtonsOff() {

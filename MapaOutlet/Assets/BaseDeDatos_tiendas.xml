@@ -47,7 +47,7 @@
       <categoria>NIÑOS</categoria>
     </tienda>
 
-    <tienda nombre="JESSY FRANZ" local ="A-5A">
+    <tienda nombre="JESSY&#10;FRANZ" local ="A-5A">
       <telefono>2105491</telefono>
       <descripcion></descripcion>
       <categoria>NIÑOS</categoria>
@@ -689,7 +689,7 @@
       <categoria>ACCESORIOS</categoria>
     </tienda>
 
-    <tienda nombre="SUNGLASS HUT" local ="R-3B">
+    <tienda nombre="SUNGLASS&#10;HUT" local ="R-3B">
       <telefono>2106399</telefono>
       <descripcion></descripcion>
       <categoria>ACCESORIOS</categoria>
