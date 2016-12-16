@@ -785,6 +785,12 @@
       <categoria>ISLA</categoria>
     </tienda>
 
+    <tienda nombre="ACCESORIOS MOVIL" local ="Z-11">
+      <telefono></telefono>
+      <descripcion></descripcion>
+      <categoria>ISLA</categoria>
+    </tienda>
+
     <tienda nombre="PISA" local ="Z-12">
       <telefono></telefono>
       <descripcion></descripcion>
@@ -797,7 +803,7 @@
       <categoria>OTROS</categoria>
     </tienda>
 
-    <tienda nombre="RELOJES LUXURY" local ="Z-2">
+    <tienda nombre="TIME IS&#10;LUXURY" local ="Z-2">
       <telefono>2105327</telefono>
       <descripcion></descripcion>
       <categoria>ISLA</categoria>
