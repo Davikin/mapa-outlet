@@ -71,7 +71,7 @@
       <categoria>DEPORTES</categoria>
     </tienda>
 
-    <tienda nombre="BABY MINK" local ="B-4, B-7">
+    <tienda nombre="FASHION BABY" local ="B-4, B-7">
       <telefono>2106023</telefono>
       <descripcion></descripcion>
       <categoria>NIÑOS</categoria>
@@ -810,6 +810,12 @@
     </tienda>
 
     <tienda nombre="SOLARIS" local ="Z-3">
+      <telefono>2105096</telefono>
+      <descripcion></descripcion>
+      <categoria>ISLA</categoria>
+    </tienda>
+
+    <tienda nombre="SOLARIS" local ="Z-4">
       <telefono>2105096</telefono>
       <descripcion></descripcion>
       <categoria>ISLA</categoria>
