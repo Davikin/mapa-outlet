@@ -40,6 +40,9 @@ public class Panel : MonoBehaviour {
 
     public WWW userFile;
     public bool loadDataFromXML;
+
+    public bool storeClickPoint = true;
+
     // Use this for initialization
     void Awake() {
         Instance = this;
@@ -207,5 +210,10 @@ public class Panel : MonoBehaviour {
         
         guiaColorAnim.SetTrigger(onOrOff ? "in" : "out");
         mapCleanerAnim.SetTrigger(onOrOff ? "in" : "out");
+    }
+
+    public void CallMoveAgent() {
+        agent.MoveAgent();
+        print("Calling MoveAgent()");
     }
 }

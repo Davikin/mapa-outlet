@@ -4,10 +4,17 @@ using System.Collections;
 public class ButtonDeactivator : MonoBehaviour {
     public void CallButtonsOff() {
         Panel.Instance.ButtonsOff();
+        Panel.Instance.CallMoveAgent();
+        Panel.Instance.storeClickPoint = false;
+        Panel.Instance.ToggleIndicators(false);
+        print("storeClickPoint: " + Panel.Instance.storeClickPoint);
     }
 
     public void CallButtonsOn() {
         Panel.Instance.ButtonsOn();
+        Panel.Instance.storeClickPoint = true;
+        Panel.Instance.ToggleIndicators(true);
+        print("storeClickPoint: " + Panel.Instance.storeClickPoint);
     }
 
     public void CallActivateButtons() {

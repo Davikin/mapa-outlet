@@ -16,6 +16,10 @@ public class Agent : MonoBehaviour {
     public bool hideIslands = true;
     private GameObject selectedIsland;
 
+    private bool storeClickPoint;
+    Ray ray;
+
+
     // Use this for initialization
     void Start() {
         agent = this.GetComponent<NavMeshAgent>();
@@ -29,28 +33,28 @@ public class Agent : MonoBehaviour {
             selectedIsland = null;
             if (EventSystem.current.currentSelectedGameObject.name.ToLower().Contains("isla"))
                 selectedIsland = EventSystem.current.currentSelectedGameObject;
-
-            MoveAgent();     
+            if(Panel.Instance.storeClickPoint)
+                ray = camera3D.ScreenPointToRay(Input.mousePosition);
         }
     }
 
-    private void MoveAgent() {
-        Ray ray = camera3D.ScreenPointToRay(Input.mousePosition);
+    public void MoveAgent() {
+        print("Moving agent!");
+
         RaycastHit hit;
         
         if (agent.hasPath) {
             agent.Stop();
             agent.ResetPath();
         }
-        //agent.updatePosition = false;
+
         agent.enabled = false;
         agent.transform.localPosition = initialPosition;
-        //agent.updatePosition = true;
         agent.enabled = true;
-        if (Physics.Raycast(ray, out hit) && !Panel.Instance.panel.activeSelf) {
+        if (Physics.Raycast(ray, out hit)) {
             agent.destination = hit.point;
         }
-        else print("No se puede mover el agent porque el panel esta activo. Raycast = "+ Physics.Raycast(ray, out hit)+"PanelIsActive: "+ !Panel.Instance.panel.activeSelf);
+        //else print("No se puede mover el agent porque el panel esta activo. Raycast = "+ Physics.Raycast(ray, out hit)+"PanelIsActive: "+ !Panel.Instance.panel.activeSelf);
     }
 
     void OnTriggerEnter(Collider col) {
@@ -67,6 +71,9 @@ public class Agent : MonoBehaviour {
             if (col.GetComponent<LinkToIsland>()) {
                 touchedIslands.Add(col.gameObject);
                 if (hideIslands && col.GetComponent<LinkToIsland>().island != selectedIsland) col.GetComponent<LinkToIsland>().island.SetActive(false);
+            }
+            if (col.name.Contains("corner")) {
+                //agent.Stop(); //new feature
             }
         }
     }
